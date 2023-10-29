@@ -4,9 +4,11 @@ import com.example.multipleauthenticationprovider.entities.Otp;
 import com.example.multipleauthenticationprovider.repositories.OtpRepository;
 import com.example.multipleauthenticationprovider.security.authentications.OtpAuthentication;
 import com.example.multipleauthenticationprovider.security.authentications.UsernamePasswordAuthentication;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -19,14 +21,12 @@ import java.util.Random;
 import java.util.UUID;
 
 @Component
+@RequiredArgsConstructor
 public class UsernamePasswordAuthFilter
         extends OncePerRequestFilter {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private OtpRepository otpRepository;
+    private final AuthenticationManager authenticationManager;
+    private final OtpRepository otpRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -40,9 +40,10 @@ public class UsernamePasswordAuthFilter
         var otp = request.getHeader("otp");
 
         if (otp == null) {
-            // step 1
-            Authentication a = new UsernamePasswordAuthentication(username, password);
-            a = authenticationManager.authenticate(a);
+            // step 1: username and password
+            Authentication authentication = new UsernamePasswordAuthentication(username, password);
+            authentication = authenticationManager.authenticate(authentication);
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
             // we generate an OTP
             String code = String.valueOf(new Random().nextInt(9999) + 1000);
 
@@ -51,9 +52,10 @@ public class UsernamePasswordAuthFilter
             otpEntity.setOtp(code);
             otpRepository.save(otpEntity);
         } else {
-            // step 2
-            Authentication a = new OtpAuthentication(username, otp);
-            a = authenticationManager.authenticate(a);
+            // step 2: username and otp
+            Authentication authentication = new OtpAuthentication(username, otp);
+            authentication = authenticationManager.authenticate(authentication);
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
             // we issue a token
             response.setHeader("Authorization", UUID.randomUUID().toString());
         }

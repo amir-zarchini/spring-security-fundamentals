@@ -3,6 +3,7 @@ package com.example.multipleauthenticationprovider.config;
 import com.example.multipleauthenticationprovider.security.filters.UsernamePasswordAuthFilter;
 import com.example.multipleauthenticationprovider.security.providers.OtpAuthenticationProvider;
 import com.example.multipleauthenticationprovider.security.providers.UsernamePasswordAuthProvider;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,16 +16,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
+@RequiredArgsConstructor
 public class ProjectConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UsernamePasswordAuthProvider authProvider;
-
-    @Autowired
-    private OtpAuthenticationProvider otpAuthenticationProvider;
-
-    @Autowired
-    private UsernamePasswordAuthFilter usernamePasswordAuthFilter;
+    private final UsernamePasswordAuthProvider authProvider;
+    private final OtpAuthenticationProvider otpAuthenticationProvider;
+    private final UsernamePasswordAuthFilter usernamePasswordAuthFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -38,7 +35,7 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) {
         http.addFilterAt(usernamePasswordAuthFilter,
                 BasicAuthenticationFilter.class);
     }

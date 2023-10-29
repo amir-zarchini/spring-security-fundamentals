@@ -2,7 +2,7 @@ package com.example.multipleauthenticationprovider.security.providers;
 
 import com.example.multipleauthenticationprovider.repositories.OtpRepository;
 import com.example.multipleauthenticationprovider.security.authentications.OtpAuthentication;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -12,10 +12,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class OtpAuthenticationProvider implements AuthenticationProvider {
 
-    @Autowired
-    private OtpRepository otpRepository;
+    private final OtpRepository otpRepository;
+    private final String BAD_CREDENTIAL = "bad credential!";
 
     @Override
     public Authentication authenticate(Authentication authentication)
@@ -23,17 +24,17 @@ public class OtpAuthenticationProvider implements AuthenticationProvider {
         String username = authentication.getName();
         String otp = (String) authentication.getCredentials();
 
-        var o = otpRepository.findOtpByUsername(username);
+        var otpByUsername = otpRepository.findOtpByUsername(username);
 
-        if (o.isPresent()) {
+        if (otpByUsername.isPresent()) {
             return new OtpAuthentication(username, otp, List.of(() -> "read"));
         }
 
-        throw new BadCredentialsException(":(");
+        throw new BadCredentialsException(BAD_CREDENTIAL);
     }
 
     @Override
-    public boolean supports(Class<?> aClass) {
-        return OtpAuthentication.class.equals(aClass);
+    public boolean supports(Class<?> classType) {
+        return OtpAuthentication.class.equals(classType);
     }
 }

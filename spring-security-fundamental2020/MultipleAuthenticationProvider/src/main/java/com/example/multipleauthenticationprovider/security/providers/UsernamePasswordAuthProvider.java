@@ -2,6 +2,7 @@ package com.example.multipleauthenticationprovider.security.providers;
 
 import com.example.multipleauthenticationprovider.security.authentications.UsernamePasswordAuthentication;
 import com.example.multipleauthenticationprovider.service.JpaUserDetailsService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -13,14 +14,13 @@ import org.springframework.stereotype.Component;
 
 
 @Component
+@RequiredArgsConstructor
 public class UsernamePasswordAuthProvider
         implements AuthenticationProvider {
 
-    @Autowired
-    private JpaUserDetailsService userDetailsService;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final JpaUserDetailsService userDetailsService;
+    private final PasswordEncoder passwordEncoder;
+    private final String BAD_CREDENTIAL = "bad credential!";
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -32,11 +32,11 @@ public class UsernamePasswordAuthProvider
             return new UsernamePasswordAuthentication(username, password, user.getAuthorities());
         }
 
-        throw new BadCredentialsException(":(");
+        throw new BadCredentialsException(BAD_CREDENTIAL);
     }
 
     @Override
-    public boolean supports(Class<?> aClass) {
-        return UsernamePasswordAuthentication.class.equals(aClass);
+    public boolean supports(Class<?> classType) {
+        return UsernamePasswordAuthentication.class.equals(classType);
     }
 }
