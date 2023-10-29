@@ -1,10 +1,10 @@
 package com.example.multipleauthenticationprovider.config;
 
+import com.example.multipleauthenticationprovider.security.filters.TokenAuthFilter;
 import com.example.multipleauthenticationprovider.security.filters.UsernamePasswordAuthFilter;
 import com.example.multipleauthenticationprovider.security.providers.OtpAuthenticationProvider;
 import com.example.multipleauthenticationprovider.security.providers.UsernamePasswordAuthProvider;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -38,6 +38,16 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) {
         http.addFilterAt(usernamePasswordAuthFilter,
                 BasicAuthenticationFilter.class);
+    }
+
+    @Bean
+    public TokenAuthFilter tokenAuthFilter() {
+        return new TokenAuthFilter();
+    }
+
+    @Bean
+    public UsernamePasswordAuthFilter usernamePasswordAuthFilter() {
+        return new UsernamePasswordAuthFilter();
     }
 
     @Override

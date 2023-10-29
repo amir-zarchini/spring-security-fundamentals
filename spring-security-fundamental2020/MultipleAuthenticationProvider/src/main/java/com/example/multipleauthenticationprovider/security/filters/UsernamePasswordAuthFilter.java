@@ -4,6 +4,8 @@ import com.example.multipleauthenticationprovider.entities.Otp;
 import com.example.multipleauthenticationprovider.repositories.OtpRepository;
 import com.example.multipleauthenticationprovider.security.authentications.OtpAuthentication;
 import com.example.multipleauthenticationprovider.security.authentications.UsernamePasswordAuthentication;
+import com.example.multipleauthenticationprovider.security.managers.TokenManager;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,11 +24,13 @@ import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
+@NoArgsConstructor(force = true)
 public class UsernamePasswordAuthFilter
         extends OncePerRequestFilter {
 
     private final AuthenticationManager authenticationManager;
     private final OtpRepository otpRepository;
+    private final TokenManager tokenManager;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -57,7 +61,9 @@ public class UsernamePasswordAuthFilter
             authentication = authenticationManager.authenticate(authentication);
 //            SecurityContextHolder.getContext().setAuthentication(authentication);
             // we issue a token
-            response.setHeader("Authorization", UUID.randomUUID().toString());
+            var token = UUID.randomUUID().toString();
+            tokenManager.add(token);
+            response.setHeader("Authorization", token);
         }
     }
 
