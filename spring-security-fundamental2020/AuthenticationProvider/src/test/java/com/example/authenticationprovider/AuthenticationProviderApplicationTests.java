@@ -1,10 +1,10 @@
-package com.example.springsecurityep4;
+package com.example.authenticationprovider;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringSecurityEp4ApplicationTests {
+class AuthenticationProviderApplicationTests {
 
 	@Test
 	void contextLoads() {

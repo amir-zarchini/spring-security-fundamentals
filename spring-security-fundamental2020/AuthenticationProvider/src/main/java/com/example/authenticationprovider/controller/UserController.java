@@ -1,4 +1,4 @@
-package com.example.springsecurityep4.controller;
+package com.example.authenticationprovider.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5ad411fa-2b64-411e-adcd-ce40fb187356" name="Changes" comment="edit spring-security-ep4">
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/main/java/com/example/authenticationprovider/AuthenticationProviderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/main/java/com/example/authenticationprovider/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/main/java/com/example/authenticationprovider/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/main/java/com/example/authenticationprovider/security/CustomAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AuthenticationProvider/src/test/java/com/example/authenticationprovider/AuthenticationProviderApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springsecurityep4/SpringSecurityEp4Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springsecurityep4/config/ProjectConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springsecurityep4/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springsecurityep4/security/CustomAuthenticationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/springsecurityep4/SpringSecurityEp4ApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2WeS0JjCF2NoRKaasfkkTc12u9x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/a-zarchini/IdeaProjects/spring-security-fundamentals/spring-security-fundamental2020/spring-security-ep4",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "35937243e9d4778f1ce0fa91194e9706",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringSecurityEp4Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-security-ep4" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springsecurityep4.SpringSecurityEp4Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ad411fa-2b64-411e-adcd-ce40fb187356" name="Changes" comment="" />
+      <created>1697091330494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697091330494</updated>
+      <workItem from="1697091332971" duration="3648000" />
+      <workItem from="1697355281070" duration="270000" />
+      <workItem from="1697604679329" duration="3361000" />
+      <workItem from="1698141765371" duration="37000" />
+      <workItem from="1698559361056" duration="138000" />
+    </task>
+    <task id="LOCAL-00001" summary="edit project config">
+      <created>1697109017951</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697109017951</updated>
+    </task>
+    <task id="LOCAL-00002" summary="edit spring-security-ep4">
+      <created>1697626874357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697626874357</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit project config" />
+    <MESSAGE value="edit spring-security-ep4" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit spring-security-ep4" />
+  </component>
+</project>

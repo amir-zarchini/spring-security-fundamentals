@@ -1,4 +1,4 @@
-package com.example.springsecurityep4.security;
+package com.example.authenticationprovider.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
