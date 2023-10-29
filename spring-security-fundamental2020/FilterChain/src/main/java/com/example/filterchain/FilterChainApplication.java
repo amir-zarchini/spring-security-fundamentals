@@ -1,13 +1,13 @@
-package com.example.springsecurityep5;
+package com.example.filterchain;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSecurityEp5Application {
+public class FilterChainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecurityEp5Application.class, args);
+		SpringApplication.run(FilterChainApplication.class, args);
 	}
 
 }

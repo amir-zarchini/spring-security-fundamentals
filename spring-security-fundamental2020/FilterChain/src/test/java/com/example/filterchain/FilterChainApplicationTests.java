@@ -1,10 +1,10 @@
-package com.example.springsecurityep5;
+package com.example.filterchain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringSecurityEp5ApplicationTests {
+class FilterChainApplicationTests {
 
 	@Test
 	void contextLoads() {
