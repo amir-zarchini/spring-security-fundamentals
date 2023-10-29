@@ -1,6 +1,6 @@
 package com.example.userdetailserviceandpasswordencoder;
 
-import org.springframework.boot.SpringApplication;
+import gitorg.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication

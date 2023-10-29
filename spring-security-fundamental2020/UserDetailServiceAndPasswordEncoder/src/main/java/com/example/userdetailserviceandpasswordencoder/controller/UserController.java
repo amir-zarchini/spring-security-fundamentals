@@ -1,6 +1,6 @@
 package com.example.userdetailserviceandpasswordencoder.controller;
 
-import com.example.springsecurityep3.model.User;
+import com.example.userdetailserviceandpasswordencoder.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
