@@ -21,6 +21,7 @@ public class UsernamePasswordAuthProvider
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    private final String BAD_CREDENTIAL = "bad credential!";
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -32,7 +33,7 @@ public class UsernamePasswordAuthProvider
             return new UsernamePasswordAuthentication(username, password, user.getAuthorities());
         }
 
-        throw new BadCredentialsException(":(");
+        throw new BadCredentialsException(BAD_CREDENTIAL);
     }
 
     @Override
