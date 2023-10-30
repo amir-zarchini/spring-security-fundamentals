@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Setter
 @Getter
+@Setter
 public class Otp {
 
     @Id

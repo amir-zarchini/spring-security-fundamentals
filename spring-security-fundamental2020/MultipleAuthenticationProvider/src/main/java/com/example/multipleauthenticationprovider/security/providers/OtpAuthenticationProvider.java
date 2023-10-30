@@ -2,7 +2,7 @@ package com.example.multipleauthenticationprovider.security.providers;
 
 import com.example.multipleauthenticationprovider.repositories.OtpRepository;
 import com.example.multipleauthenticationprovider.security.authentications.OtpAuthentication;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
 public class OtpAuthenticationProvider implements AuthenticationProvider {
 
-    private final OtpRepository otpRepository;
+    @Autowired
+    private OtpRepository otpRepository;
     private final String BAD_CREDENTIAL = "bad credential!";
 
     @Override

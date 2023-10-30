@@ -2,7 +2,7 @@ package com.example.multipleauthenticationprovider.security.providers;
 
 import com.example.multipleauthenticationprovider.security.authentications.TokenAuthentication;
 import com.example.multipleauthenticationprovider.security.managers.TokenManager;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -10,16 +10,14 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class TokenAuthProvider implements AuthenticationProvider {
 
-    private final TokenManager tokenManager;
+    @Autowired
+    private TokenManager tokenManager;
     private final String BAD_CREDENTIAL = "bad credential!";
 
     @Override
-    public Authentication authenticate(Authentication authentication)
-            throws AuthenticationException {
-
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String token = authentication.getName();
         boolean exists = tokenManager.contains(token);
 
@@ -31,7 +29,7 @@ public class TokenAuthProvider implements AuthenticationProvider {
     }
 
     @Override
-    public boolean supports(Class<?> aClass) {
-        return TokenAuthentication.class.equals(aClass);
+    public boolean supports(Class<?> classType) {
+        return TokenAuthentication.class.equals(classType);
     }
 }

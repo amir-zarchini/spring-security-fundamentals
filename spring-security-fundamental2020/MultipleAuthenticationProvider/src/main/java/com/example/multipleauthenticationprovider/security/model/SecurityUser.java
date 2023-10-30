@@ -1,8 +1,8 @@
 package com.example.multipleauthenticationprovider.security.model;
 
+import com.example.multipleauthenticationprovider.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.example.multipleauthenticationprovider.entities.User;
 
 import java.util.Collection;
 import java.util.List;
